@@ -6,5 +6,5 @@ public interface ProjectService {
 
     public Project saveProject (Project project);
 
-    public Project getProjectByCode (long projectCode);
+    public Project getProjectByCode (long project_code);
 }

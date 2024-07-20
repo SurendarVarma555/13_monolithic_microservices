@@ -8,21 +8,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/projects")
 public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
 
-    @PostMapping("/projects")
+    @PostMapping()
     public ResponseEntity<Project> saveProject (@RequestBody Project project){
         Project savedProject = projectService.saveProject(project);
         return new ResponseEntity<>(savedProject, HttpStatus.CREATED);
     }
 
-    @GetMapping("/projects/{projectCode}")
-    public ResponseEntity<Project> getProjectById (@PathVariable("projectCode") long projectCode){
-        Project projectByCode = projectService.getProjectByCode(projectCode);
+    @GetMapping("/{project_code}")
+    public ResponseEntity<Project> getProjectById (@PathVariable("project_code") long project_code){
+        Project projectByCode = projectService.getProjectByCode(project_code);
         return new ResponseEntity<>(projectByCode, HttpStatus.OK);
 
 

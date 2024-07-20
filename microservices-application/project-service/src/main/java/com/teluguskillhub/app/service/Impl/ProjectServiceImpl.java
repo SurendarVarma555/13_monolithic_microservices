@@ -21,8 +21,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Project getProjectByCode (long projectCode){
-        Project foundProject = projectRepo.findByProjectCode(projectCode);
+    public Project getProjectByCode (long project_code){
+        Project foundProject = projectRepo.findByProjectCode(project_code);
         return foundProject;
     }
 }
